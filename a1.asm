@@ -5,14 +5,11 @@ extern scanf
 section .data 
     line: db "please enter yout input: "
     s times 100 db 0
-    formatStr: db "%s" , 0
-    formatInt: db "%d" , 0
+    formatStr: db "%s", 0
+    formatInt: db "%d", 0
     line2: db "please enter your integer: "
 
 section .text 
-    
-section .bss
-    loda resb 4
 
 main:
 
@@ -26,8 +23,8 @@ main:
 
     lea rdi, [formatStr]
     lea rsi, [s]
-    xor eax, eax     
-    call scanf   
+    xor eax, eax
+    call scanf 
 
     lea rdi, [formatStr]
     lea rsi, [s]
@@ -40,8 +37,8 @@ main:
 
     lea rdi, [formatInt]
     lea rsi, [loda]
-    xor eax, eax     
-    call scanf   
+    xor eax, eax
+    call scanf 
 
     lea rdi, [formatInt]
     mov edx, [loda]
@@ -52,4 +49,6 @@ main:
     leave
     ret
 
+section .bss
+    loda resb 4
 
