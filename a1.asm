@@ -44,7 +44,7 @@ main:
     call scanf   
 
     lea rdi, [formatInt]
-    lea rsi, [loda]
+    mov edx, [loda]
     xor eax, eax
     call printf
 
